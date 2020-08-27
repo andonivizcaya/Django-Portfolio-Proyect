@@ -1,0 +1,35 @@
+{% extends "Page/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">Hydrogen Atom Orbitals</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-atom"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">blablabla</p>
+    </div>
+</header>
+<body>
+    <form action="/external" method="post">
+        {% csrf_token %}
+        Input Text:
+        <input type="text" name="param" required><br><br>
+        {{data_external}}<br><br>
+        
+        <input type="submit" value="Execute External Python Script">
+
+    </form>
+
+</body>
+
+
+{% endblock %}
